@@ -1,6 +1,6 @@
 # Neovim (PDE)
 
-This repo contains all of my [neovim](https://github.com/neovim/neovim) config files.
+This repo contains all of my [neovim](https://github.com/neovim/neovim) config files which are based on [LazyVim/Starter](https://github.com/lazyVim/starter/).
 
 ## Get Started
 
