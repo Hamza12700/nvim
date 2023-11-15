@@ -16,9 +16,9 @@ mv ~/.config/nvim/ ~/.config/nvim.bak
 Optional but recommended:
 
 ```bash
-rm ~/.local/share/nvim{,.bak}
-rm ~/.local/state/nvim{,.bak}
-rm ~/.cache/nvim{,.bak}
+rm ~/.local/share/nvim
+rm ~/.local/state/nvim
+rm ~/.cache/nvim
 ```
 
 Clone the repository and open `nvim`:
