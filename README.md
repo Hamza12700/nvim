@@ -1,11 +1,11 @@
 # Neovim (PDE)
 
-This repo contains all of my [neovim](https://github.com/neovim/neovim) config files which are based on [LazyVim/Starter](https://github.com/lazyVim/starter/).
+This repo contains all of my [neovim](https://github.com/neovim/neovim) config files which is based on [LazyVim/Starter](https://github.com/lazyVim/starter/).
 
 ## Get Started
 
 > [!NOTE]
-> I use `neovim-nightly`, but the configuration should work with stable version of neovim.
+> I use `neovim-nightly`, but the configuration should work with the stable version of neovim.
 
 Make a backup of your current `neovim` files:
 
