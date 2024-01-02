@@ -24,6 +24,12 @@ require("lazy").setup({
 	"mbbill/undotree",
 
 	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		config = function() require("lsp_signature").setup() end
+	},
+
+	{
 		"ThePrimeagen/harpoon",
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
