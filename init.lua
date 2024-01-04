@@ -15,115 +15,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-
-	-- Git related plugins
-	"tpope/vim-fugitive",
-	"tpope/vim-rhubarb",
-	"jiangmiao/auto-pairs",
-	"mbbill/undotree",
-
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
-		config = function() require("lsp_signature").setup() end
-	},
-
-	{
-		"ThePrimeagen/harpoon",
-		dependencies = { "nvim-lua/plenary.nvim" }
-	},
-
-	-- Detect tabstop and shiftwidth automatically
-	"tpope/vim-sleuth",
-
-	-- NOTE: This is where your plugins related to LSP can be installed.
-	--  The configuration is done below. Search for lspconfig to find it below.
-	{
-		-- LSP Configuration & Plugins
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			-- Automatically install LSPs to stdpath for neovim
-			{ "williamboman/mason.nvim", config = true },
-			"williamboman/mason-lspconfig.nvim",
-
-			-- Useful status updates for LSP
-			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			"j-hui/fidget.nvim",
-
-			-- Additional lua configuration, makes nvim stuff amazing!
-			"folke/neodev.nvim",
-		},
-	},
-
-	{
-		-- Autocompletion
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			-- Snippet Engine & its associated nvim-cmp source
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-
-			-- Adds LSP completion capabilities
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-
-			-- Adds a number of user-friendly snippets
-			"rafamadriz/friendly-snippets",
-		},
-	},
-
-	-- Adds git related signs to the gutter, as well as utilities for managing changes
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function ()
-			require("gitsigns").setup()
-		end
-	},
-
-	{
-		"rebelot/kanagawa.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme kanagawa")
-		end,
-	},
-
-	{
-		-- Set lualine as statusline
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-	},
-
-	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
-
-	-- Fuzzy Finder (files, lsp, etc)
-	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-				cond = function()
-					return vim.fn.executable("make") == 1
-				end,
-			},
-		},
-	},
-
-	{
-		-- Highlight, edit, and navigate code
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		build = ":TSUpdate",
-	},
-}, {})
+require("lazy").setup("plugins")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -147,15 +39,17 @@ local on_attach = function(_, bufnr)
 		vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 	end
 
+	local builtin = require("telescope.builtin")
+
 	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-	nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-	nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-	nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+	nmap("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
+	nmap("gr", builtin.lsp_references, "[G]oto [R]eferences")
+	nmap("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+	nmap("<leader>D", builtin.lsp_type_definitions, "Type [D]efinition")
+	nmap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+	nmap("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 	-- See `:help K` for why this keymap
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
@@ -181,8 +75,6 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local servers = {
-	-- clangd = {},
-	-- pyright = {},
 	gopls = {},
 	rust_analyzer = {},
 
@@ -287,7 +179,8 @@ cmp.setup({
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
+		{ name = "luasnip", option = { show_autosnippets = true } },
 		{ name = "path" },
+		{ name = "buffer" }
 	},
 })
