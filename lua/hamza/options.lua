@@ -14,6 +14,7 @@ opt.mouse = "a"
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+opt.softtabstop = 2
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
