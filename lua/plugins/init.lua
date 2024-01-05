@@ -4,6 +4,17 @@ return {
 	"numToStr/Comment.nvim",
 	"hrsh7th/cmp-buffer",
 
+	{
+		"echasnovski/mini.indentscope",
+		config = function ()
+			require("mini.indentscope").setup({
+				draw = {
+					delay = 50
+				}
+			})
+		end
+	},
+
 	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
 
