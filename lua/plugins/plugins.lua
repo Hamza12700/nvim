@@ -1,6 +1,11 @@
 return {
 	"jiangmiao/auto-pairs",
-	"mbbill/undotree",
+	{
+		"mbbill/undotree",
+		config = function ()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+		end
+	},
 	"numToStr/Comment.nvim",
 	"hrsh7th/cmp-buffer",
 	"RRethy/vim-illuminate",
