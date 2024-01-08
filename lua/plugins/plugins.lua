@@ -22,6 +22,12 @@ return {
 	},
 
 	"tpope/vim-fugitive",
+	{
+		"ggandor/leap.nvim",
+		config = function ()
+			require("leap").create_default_mappings()
+		end
+	},
 	"tpope/vim-rhubarb",
 
 	{
