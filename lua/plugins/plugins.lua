@@ -8,7 +8,6 @@ return {
 	},
 	"numToStr/Comment.nvim",
 	"hrsh7th/cmp-buffer",
-	"RRethy/vim-illuminate",
 
 	{
 		"echasnovski/mini.indentscope",
