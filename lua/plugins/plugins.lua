@@ -6,7 +6,10 @@ return {
 			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end
 	},
-	"numToStr/Comment.nvim",
+	{
+		"numToStr/Comment.nvim",
+		lazy = false
+	},
 	"hrsh7th/cmp-buffer",
 
 	{
