@@ -9,8 +9,6 @@ opt.hlsearch = false
 vim.wo.number = true
 opt.relativenumber = true
 
--- Enable mouse mode
-opt.mouse = "a"
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
