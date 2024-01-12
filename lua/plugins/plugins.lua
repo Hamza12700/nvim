@@ -8,7 +8,10 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		lazy = false
+		lazy = false,
+		config = function()
+			require("Comment").setup()
+		end
 	},
 	"hrsh7th/cmp-buffer",
 
