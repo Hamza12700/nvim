@@ -10,6 +10,7 @@ vim.wo.number = true
 opt.relativenumber = true
 opt.backup = false
 opt.swapfile = false
+opt.updatetime = 100
 
 opt.tabstop = 2
 opt.shiftwidth = 2
