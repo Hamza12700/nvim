@@ -9,6 +9,7 @@ opt.hlsearch = false
 vim.wo.number = true
 opt.relativenumber = true
 opt.backup = false
+opt.swapfile = false
 
 opt.tabstop = 2
 opt.shiftwidth = 2
