@@ -8,6 +8,7 @@ opt.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 opt.relativenumber = true
+opt.backup = false
 
 opt.tabstop = 2
 opt.shiftwidth = 2
