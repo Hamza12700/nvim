@@ -15,8 +15,6 @@ opt.expandtab = true
 opt.softtabstop = 2
 opt.smartindent = true
 
-opt.clipboard = "unnamedplus"
-
 -- Enable break indent
 opt.breakindent = true
 
