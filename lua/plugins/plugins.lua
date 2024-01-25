@@ -2,7 +2,7 @@ return {
 	"jiangmiao/auto-pairs",
 	{
 		"mbbill/undotree",
-		config = function ()
+		config = function()
 			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end
 	},
@@ -17,7 +17,7 @@ return {
 
 	{
 		"echasnovski/mini.indentscope",
-		config = function ()
+		config = function()
 			require("mini.indentscope").setup({
 				draw = {
 					delay = 50
@@ -29,7 +29,7 @@ return {
 	"tpope/vim-fugitive",
 	{
 		"ggandor/leap.nvim",
-		config = function ()
+		config = function()
 			require("leap").create_default_mappings()
 		end
 	},
@@ -37,7 +37,7 @@ return {
 
 	{
 		"lewis6991/gitsigns.nvim",
-		config = function ()
+		config = function()
 			require("gitsigns").setup()
 		end
 	},
