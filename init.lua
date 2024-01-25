@@ -76,6 +76,7 @@ local servers = {
   rust_analyzer = {},
   html = {
     filetypes = { "html", "templ", "svelte", "astro" },
+    single_file_support = false,
   },
 
   lua_ls = {
