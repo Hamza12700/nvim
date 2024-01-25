@@ -74,6 +74,9 @@ require("mason-lspconfig").setup()
 local servers = {
   gopls = {},
   rust_analyzer = {},
+  html = {
+    filetypes = { "html", "templ" }
+  },
 
   lua_ls = {
     Lua = {
