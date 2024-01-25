@@ -75,7 +75,7 @@ local servers = {
   gopls = {},
   rust_analyzer = {},
   html = {
-    filetypes = { "html", "templ" }
+    filetypes = { "html", "templ", "svelte", "astro" },
   },
 
   lua_ls = {
