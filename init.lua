@@ -95,7 +95,7 @@ local servers = {
   gopls = {},
   rust_analyzer = {},
   html = {
-    filetypes = { "html", "templ", "svelte", "astro" },
+    filetypes = { "html", "templ" },
     single_file_support = false,
   },
 
