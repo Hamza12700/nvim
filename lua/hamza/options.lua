@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.scrolloff = 10
+opt.guicursor = ""
 
 -- Set highlight on search
 opt.hlsearch = false
