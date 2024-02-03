@@ -1,5 +1,10 @@
 return {
-	"jiangmiao/auto-pairs",
+
+	{
+		"jiangmiao/auto-pairs",
+		event = "InsertEnter"
+	},
+
 	{
 		"mbbill/undotree",
 		config = function()
