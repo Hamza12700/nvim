@@ -92,7 +92,13 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local servers = {
-  gopls = {},
+  gopls = {
+    settings = {
+      gofmt = {
+        tabwidth = 2
+      }
+    }
+  },
   rust_analyzer = {},
   html = {
     filetypes = { "html", "templ" },
