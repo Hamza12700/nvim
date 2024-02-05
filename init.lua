@@ -99,7 +99,6 @@ local servers = {
       }
     }
   },
-  rust_analyzer = {},
   html = {
     filetypes = { "html", "templ" },
     single_file_support = false,
