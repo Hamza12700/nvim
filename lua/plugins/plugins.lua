@@ -6,19 +6,6 @@ return {
 			require("nvim-autopairs").setup()
 		end
 	},
-
-	{
-		"nvim-pack/nvim-spectre",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local spectre = require("spectre")
-			vim.keymap.set("n", "<leader>S", ":Spectre<CR>", { silent = true })
-			vim.keymap.set("n", "<leader>rw", function()
-				spectre.open_visual({ select_word = true })
-			end)
-		end
-	},
-
 	{
 		"mbbill/undotree",
 		config = function()
