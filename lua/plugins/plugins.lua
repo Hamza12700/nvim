@@ -19,7 +19,9 @@ return {
 			require("Comment").setup()
 		end
 	},
+
 	"hrsh7th/cmp-buffer",
+	"folke/trouble.nvim",
 
 	{
 		"echasnovski/mini.indentscope",
