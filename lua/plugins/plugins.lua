@@ -22,6 +22,7 @@ return {
 
 	"hrsh7th/cmp-buffer",
 	"folke/trouble.nvim",
+	"ThePrimeagen/git-worktree.nvim",
 
 	{
 		"echasnovski/mini.indentscope",
