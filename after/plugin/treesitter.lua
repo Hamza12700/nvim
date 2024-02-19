@@ -57,16 +57,18 @@ vim.defer_fn(function()
 					["if"] = "@function.inner",
 					["ac"] = "@class.outer",
 					["ic"] = "@class.inner",
+					["a="] = "@assignment.inner",
+					["as"] = "@assignment.lhs",
 				},
 			},
 			move = {
 				enable = true,
 				set_jumps = true, -- whether to set jumps in the jumplist
 				goto_next = {
-					["]d"] = "@conditional.outer",
+					["]i"] = "@conditional.outer",
 				},
 				goto_previous = {
-					["[d"] = "@conditional.outer"
+					["[i"] = "@conditional.outer"
 				},
 				goto_next_start = {
 					["]f"] = "@function.outer",
