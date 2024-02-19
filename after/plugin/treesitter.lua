@@ -2,6 +2,16 @@
 -- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
 vim.defer_fn(function()
+	local repeat_mode = require("nvim-treesitter.textobjects.repeatable_move")
+	local gs = require("gitsigns")
+
+	local next_hunk_repeat, prev_hunk_repeat = repeat_mode.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+
+	vim.keymap.set({ "n", "x", "o" }, ";", repeat_mode.repeat_last_move_next)
+	vim.keymap.set({ "n", "x", "o" }, ",", repeat_mode.repeat_last_move_previous)
+	vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+	vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"c",
