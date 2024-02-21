@@ -90,6 +90,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local servers = {
+  htmx = {},
   gopls = {
     settings = {
       gofmt = {
