@@ -1,5 +1,9 @@
 return {
 	{
+		"j-hui/fidget.nvim",
+		opts = {},
+	},
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = function()
