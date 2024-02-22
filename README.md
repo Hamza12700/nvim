@@ -1,5 +1,9 @@
 # Neovim (PDE)
 
+<a href="https://dotfyle.com/Hamza12700/neovim"><img src="https://dotfyle.com/Hamza12700/neovim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/Hamza12700/neovim"><img src="https://dotfyle.com/Hamza12700/neovim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/Hamza12700/neovim"><img src="https://dotfyle.com/Hamza12700/neovim/badges/plugin-manager?style=flat" /></a>
+
 This repo contains all of my [neovim](https://github.com/neovim/neovim) config files.
 
 Huge shout-out to [TeejDries](https://github.com/tjdevries) for this awesome [nvim kickstart](https://github.com/nvim-lua/kickstart.nvim) guide. 
