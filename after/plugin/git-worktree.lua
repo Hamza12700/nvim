@@ -1,4 +1,3 @@
-local git_worktree = require("git-worktree")
 local telescope = require("telescope")
 telescope.load_extension("git_worktree")
 
