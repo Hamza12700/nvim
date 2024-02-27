@@ -70,6 +70,7 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
   nmap("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
   nmap("<leader>sk", builtin.keymaps, "[S]earch Keymaps")
+  nmap("<leader>sr", builtin.resume, "[S]earch [R]esume")
   nmap("<leader>sn", function()
     builtin.find_files { cwd = vim.fn.stdpath("config") }
   end, "[S]earch [N]eovim config files")
