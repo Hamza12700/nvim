@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
         if exit_code == 0 then
           print("Templ generated")
         else
-          print("Templ generation failed with an exit code:", exit_code)
+          error("Templ generation failed with an exit code")
         end
       end
     })
