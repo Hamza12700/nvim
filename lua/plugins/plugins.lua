@@ -1,18 +1,4 @@
 return {
-	{
-		"shellRaining/hlchunk.nvim",
-		event = { "UIEnter" },
-		config = function()
-			require("hlchunk").setup({
-				blank = {
-					enable = false,
-				},
-				line_num = {
-					enable = false,
-				}
-			})
-		end
-	},
 	"ziglang/zig.vim",
 	{
 		"j-hui/fidget.nvim",
@@ -36,6 +22,13 @@ return {
 		lazy = false,
 		config = function()
 			require("Comment").setup()
+		end
+	},
+
+	{
+		"echasnovski/mini.indentscope",
+		config = function ()
+			require("mini.indentscope").setup({})
 		end
 	},
 
