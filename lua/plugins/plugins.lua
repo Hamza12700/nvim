@@ -1,4 +1,18 @@
 return {
+	{
+		"shellRaining/hlchunk.nvim",
+		event = { "UIEnter" },
+		config = function()
+			require("hlchunk").setup({
+				blank = {
+					enable = false,
+				},
+				line_num = {
+					enable = false,
+				}
+			})
+		end
+	},
 	"ziglang/zig.vim",
 	{
 		"j-hui/fidget.nvim",
@@ -28,17 +42,6 @@ return {
 	"hrsh7th/cmp-buffer",
 	"folke/trouble.nvim",
 	"ThePrimeagen/git-worktree.nvim",
-
-	{
-		"echasnovski/mini.indentscope",
-		config = function()
-			require("mini.indentscope").setup({
-				draw = {
-					delay = 50
-				}
-			})
-		end
-	},
 
 	"tpope/vim-fugitive",
 	{
@@ -114,7 +117,7 @@ return {
 		opts = {
 			theme = "auto",
 			sections = {
-				lualine_x = {"filetype"}
+				lualine_x = { "filetype" }
 			}
 		},
 	},
