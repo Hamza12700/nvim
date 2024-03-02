@@ -25,6 +25,7 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
+keymap({"n","v"}, "<leader>d", [["_d]])
 keymap("x", "<leader>p", [["_dP]])
 keymap({ "n", "v" }, "<leader>y", [["+y]])
 keymap("n", "<leader>Y", [["+Y]])
