@@ -15,6 +15,7 @@ vim.defer_fn(function()
 			"typescript",
 			"fish",
 			"vimdoc",
+			"zig",
 			"vim",
 			"bash",
 		},
