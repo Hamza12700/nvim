@@ -1,8 +1,8 @@
 = Neovim (PDE)
 
-link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/plugins?style=flat[width=200,height=200]]
-link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/leaderkey?style=flat[width=200,height=200]]
-link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/plugin-manager?style=flat[width=200,height=200]]
+link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/plugins?style=flat[width=auto,height=auto]]
+link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/leaderkey?style=flat[width=auto,height=auto]]
+link:https://dotfyle.com/Hamza12700/neovim[image:https://dotfyle.com/Hamza12700/neovim/badges/plugin-manager?style=flat[width=auto,height=auto]]
 
 This repo contains all of my https://github.com/neovim/neovim[neovim] config files.
 
