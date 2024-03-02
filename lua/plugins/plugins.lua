@@ -26,8 +26,13 @@ return {
 	},
 
 	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
+	},
+
+	{
 		"echasnovski/mini.indentscope",
-		config = function ()
+		config = function()
 			require("mini.indentscope").setup({})
 		end
 	},
