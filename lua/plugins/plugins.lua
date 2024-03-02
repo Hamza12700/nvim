@@ -37,8 +37,14 @@ return {
 		end
 	},
 
+	{
+		"folke/trouble.nvim",
+		config = function ()
+			vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>")
+		end
+	},
+
 	"hrsh7th/cmp-buffer",
-	"folke/trouble.nvim",
 	"ThePrimeagen/git-worktree.nvim",
 
 	"tpope/vim-fugitive",
