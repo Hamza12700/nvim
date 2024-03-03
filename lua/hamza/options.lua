@@ -12,6 +12,9 @@ opt.relativenumber = true
 opt.backup = false
 opt.swapfile = false
 opt.updatetime = 100
+opt.showmode = false
+opt.signcolumn = "yes"
+opt.inccommand = "split"
 
 opt.tabstop = 2
 opt.shiftwidth = 2
