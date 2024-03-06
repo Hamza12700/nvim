@@ -112,7 +112,8 @@ local servers = {
       runtime = { version = "LuaJIT" },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-      completion = { callSnippet = "Replace" }
+      completion = { callSnippet = "Replace" },
+      library = { "${3rd}/lvu/library", unpack(vim.api.nvim_get_runtime_file("", true)) }
     },
   },
 }
