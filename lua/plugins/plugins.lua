@@ -1,5 +1,4 @@
 return {
-	"ziglang/zig.vim",
 	{
 		"j-hui/fidget.nvim",
 		opts = {},
