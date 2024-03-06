@@ -18,7 +18,7 @@ keymap("n", "<leader>w", vim.cmd.w)
 keymap("n", "<leader>q", vim.cmd.q)
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
-keymap("i", "jk", "<ESC>")
+keymap({"i", "v"}, "jk", "<ESC>")
 
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
