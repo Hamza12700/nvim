@@ -54,8 +54,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
 
-	"tpope/vim-sleuth",
-
 	{
 		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
