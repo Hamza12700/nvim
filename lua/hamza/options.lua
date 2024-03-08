@@ -15,6 +15,7 @@ opt.updatetime = 100
 opt.showmode = false
 opt.signcolumn = "yes"
 opt.inccommand = "split"
+opt.colorcolumn = "80"
 
 opt.tabstop = 2
 opt.shiftwidth = 2
