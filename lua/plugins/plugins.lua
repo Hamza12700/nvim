@@ -1,144 +1,144 @@
 return {
-	{
-		"j-hui/fidget.nvim",
-		opts = {},
-	},
-	{
-		"mbbill/undotree",
-		config = function()
-			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-		end
-	},
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
-		config = function()
-			require("Comment").setup()
-		end
-	},
+  {
+    "j-hui/fidget.nvim",
+    opts = {},
+  },
+  {
+    "mbbill/undotree",
+    config = function()
+      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+    end
+  },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+    config = function()
+      require("Comment").setup()
+    end
+  },
 
-	{
-		"Exafunction/codeium.vim",
-		event = "BufEnter",
-	},
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
 
-	{
-		"echasnovski/mini.indentscope",
-		config = function()
-			require("mini.indentscope").setup({})
-		end
-	},
+  {
+    "echasnovski/mini.indentscope",
+    config = function()
+      require("mini.indentscope").setup({})
+    end
+  },
 
-	{
-		"folke/trouble.nvim",
-		config = function ()
-			vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>")
-		end
-	},
+  {
+    "folke/trouble.nvim",
+    config = function()
+      vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>")
+    end
+  },
 
-	"hrsh7th/cmp-buffer",
-	"ThePrimeagen/git-worktree.nvim",
+  "hrsh7th/cmp-buffer",
+  "ThePrimeagen/git-worktree.nvim",
 
-	"tpope/vim-fugitive",
+  "tpope/vim-fugitive",
 
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-			vim.keymap.set("n", "<leader>gg", ":Gitsigns preview_hunk<CR>")
-		end
-	},
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+      vim.keymap.set("n", "<leader>gg", ":Gitsigns preview_hunk<CR>")
+    end
+  },
 
-	{
-		"ThePrimeagen/harpoon",
-		dependencies = { "nvim-lua/plenary.nvim" }
-	},
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
 
-	{
-		-- LSP Configuration & Plugins
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			-- Automatically install LSPs to stdpath for neovim
-			{ "williamboman/mason.nvim", config = true },
-			"williamboman/mason-lspconfig.nvim",
-			"j-hui/fidget.nvim",
-			"folke/neodev.nvim",
-		},
-	},
+  {
+    -- LSP Configuration & Plugins
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { "williamboman/mason.nvim", config = true },
+      "williamboman/mason-lspconfig.nvim",
+      "j-hui/fidget.nvim",
+      "folke/neodev.nvim",
+    },
+  },
 
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*",
-		build = "make install_jsregexp"
-	},
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp"
+  },
 
-	{
-		-- Autocompletion
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			-- Snippet Engine & its associated nvim-cmp source
-			"saadparwaiz1/cmp_luasnip",
+  {
+    -- Autocompletion
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      "saadparwaiz1/cmp_luasnip",
 
-			-- Adds LSP completion capabilities
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
+      -- Adds LSP completion capabilities
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
 
-			-- Adds a number of user-friendly snippets
-			"rafamadriz/friendly-snippets",
-		},
-	},
+      -- Adds a number of user-friendly snippets
+      "rafamadriz/friendly-snippets",
+    },
+  },
 
-	{
-		"rebelot/kanagawa.nvim",
-		priority = 1000,
-		build = ":KanagawaCompile",
-		opts = {
-			compile = true,
-			dimInactive = true,
-		},
-		config = function()
-			vim.cmd.colorscheme("kanagawa")
-			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		end,
-	},
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    build = ":KanagawaCompile",
+    opts = {
+      compile = true,
+      dimInactive = true,
+    },
+    config = function()
+      vim.cmd.colorscheme("kanagawa")
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    end,
+  },
 
-	{
-		-- Set lualine as statusline
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			options = {
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
-			},
-			theme = "auto",
-			sections = {
-				lualine_x = { "filetype" }
-			}
-		},
-	},
+  {
+    -- Set lualine as statusline
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      options = {
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+      },
+      theme = "auto",
+      sections = {
+        lualine_x = { "filetype" }
+      }
+    },
+  },
 
-	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-				cond = function()
-					return vim.fn.executable("make") == 1
-				end,
-			},
-		},
-	},
+  {
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        cond = function()
+          return vim.fn.executable("make") == 1
+        end,
+      },
+    },
+  },
 
-	{
-		-- Highlight, edit, and navigate code
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		build = ":TSUpdate",
-	},
+  {
+    -- Highlight, edit, and navigate code
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    build = ":TSUpdate",
+  },
 }
