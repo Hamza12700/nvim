@@ -1,4 +1,5 @@
 return {
+  "tpope/vim-sleuth",
   {
     "j-hui/fidget.nvim",
     opts = {},
