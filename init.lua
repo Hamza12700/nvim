@@ -16,26 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.filetype.add({ extension = { templ = "templ" } })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("Templ", { clear = true }),
-  pattern = "*.templ",
-  callback = function()
-    vim.fn.jobstart({ "templ", "generate" }, {
-      stdout_buffered = true,
-      on_stderr = function()
-        print("An error occur!")
-      end,
-      on_exit = function(_, exit_code)
-        if exit_code == 0 then
-          print("Templ generated")
-        else
-          error("Templ generation failed with an exit code")
-        end
-      end
-    })
-  end
-})
-
 require("lazy").setup("plugins")
 
 -- [[ Highlight on yank ]]
