@@ -82,10 +82,7 @@ local servers = {
     }
   },
   templ = {},
-  html = {
-    filetypes = { "html", "templ" },
-    single_file_support = false,
-  },
+  html = {},
 
   lua_ls = {
     Lua = {
