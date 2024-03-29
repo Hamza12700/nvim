@@ -13,6 +13,8 @@ end
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "gl", "$")
+keymap("n", "gh", "_")
 keymap('n', '<leader>e', vim.cmd.Ex)
 keymap("n", "<leader>w", vim.cmd.w)
 keymap("n", "<leader>q", vim.cmd.q)
