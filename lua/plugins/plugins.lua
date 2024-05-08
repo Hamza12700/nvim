@@ -17,15 +17,17 @@ return {
       require("Comment").setup()
     end
   },
-
   {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
     "ggandor/leap.nvim",
     config = function()
       require("leap").create_default_mappings()
     end
   },
+
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   event = "BufEnter",
+  -- },
 
   {
     "echasnovski/mini.indentscope",
