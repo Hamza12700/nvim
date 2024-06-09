@@ -6,6 +6,8 @@ opt.guicursor = ""
 -- Set highlight on search
 opt.hlsearch = false
 
+vim.cmd("let g:zig_fmt_autosave = 0")
+
 -- Make line numbers default
 vim.wo.number = true
 opt.relativenumber = true
