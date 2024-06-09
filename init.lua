@@ -110,11 +110,6 @@ mason_lspconfig.setup({
   ensure_installed = vim.tbl_keys(servers),
 })
 
-local handlers = {
-  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
-  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
-}
-
 mason_lspconfig.setup_handlers({
   function(server_name)
     require("lspconfig")[server_name].setup({
@@ -122,7 +117,6 @@ mason_lspconfig.setup_handlers({
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
-      handlers = handlers,
     })
   end,
 })
@@ -137,10 +131,6 @@ cmp.setup({
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
   },
   completion = {
     completeopt = "menu,menuone,noinsert",
