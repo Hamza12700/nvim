@@ -34,7 +34,7 @@ keymap("n", "<leader>Y", [["+Y]])
 keymap("n", "<leader>P", [["+p]])
 keymap({ "n", "v" }, "<leader>d", [["_d]])
 keymap("n", "Q", "<nop>")
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 -- Diagnostic keymaps
