@@ -7,6 +7,7 @@ opt.guicursor = ""
 opt.hlsearch = false
 
 vim.cmd("let g:zig_fmt_autosave = 0")
+opt.iskeyword:append({"-"})
 
 -- Make line numbers default
 vim.wo.number = true
