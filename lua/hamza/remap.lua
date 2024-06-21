@@ -22,6 +22,7 @@ keymap({ "i", "v" }, "<c-c>", "<ESC>")
 keymap("t", "<Esc>", "<c-\\><c-n>")
 keymap("n", "<leader>g", ":Git<CR>")
 keymap("n", "<leader>vd", ":DiffviewOpen<cr>")
+keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
