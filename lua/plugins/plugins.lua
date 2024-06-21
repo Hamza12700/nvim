@@ -1,5 +1,6 @@
 return {
   "tpope/vim-sleuth",
+  "sindrets/diffview.nvim",
   {
     "j-hui/fidget.nvim",
     opts = {},
