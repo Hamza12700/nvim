@@ -18,6 +18,13 @@ vim.filetype.add({
   extension = { templ = "templ" }
 })
 
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = {"*.blade.php"},
+  callback = function ()
+    vim.bo.filetype = "blade"
+  end
+})
+
 require("lazy").setup("plugins")
 
 -- [[ Highlight on yank ]]
@@ -83,15 +90,15 @@ local servers = {
     }
   },
   templ = {},
-  html = {},
+  html = {
+    filetypes = {
+      "html", "templ", "blade", "php"
+    }
+  },
 
   lua_ls = {
     Lua = {
-      runtime = { version = "LuaJIT" },
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
       completion = { callSnippet = "Replace" },
-      library = { "${3rd}/lvu/library", unpack(vim.api.nvim_get_runtime_file("", true)) }
     },
   },
 }
