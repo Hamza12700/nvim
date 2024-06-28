@@ -19,8 +19,8 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = {"*.blade.php"},
-  callback = function ()
+  pattern = { "*.blade.php" },
+  callback = function()
     vim.bo.filetype = "blade"
   end
 })
@@ -88,6 +88,9 @@ local servers = {
         tabwidth = 2
       }
     }
+  },
+  phpactor = {
+    filetypes = { "php", "blade" }
   },
   templ = {},
   html = {
