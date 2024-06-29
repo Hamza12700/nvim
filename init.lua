@@ -92,7 +92,9 @@ local servers = {
   phpactor = {
     filetypes = { "php", "blade" }
   },
-  templ = {},
+  emmet_language_server = {
+    filetypes = { "css", "html", "javascriptreact", "pug", "sass", "scss", "typescriptreact", "templ", "blade" }
+  },
   html = {
     filetypes = {
       "html", "templ", "blade", "php"
