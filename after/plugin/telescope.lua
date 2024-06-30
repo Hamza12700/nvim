@@ -29,8 +29,13 @@ keyset("<leader>sd", builtin.diagnostics)
 keyset("<leader>ss", builtin.builtin)
 keyset("<leader>sh", builtin.help_tags)
 keyset("<leader>sw", builtin.grep_string)
+keyset("<leader>sk", builtin.keymaps)
+keyset("<leader>sr", builtin.resume)
+keyset("<leader>sn", function()
+	builtin.find_files { cwd = vim.fn.stdpath("config") }
+end)
 
-keyset( '<leader>/', function ()
+keyset('<leader>/', function()
 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		winblend = 14,
 		previewer = false
