@@ -1,5 +1,13 @@
 return {
   "tpope/vim-sleuth",
+  {
+    "HoNamDuong/hybrid.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("hybrid")
+    end
+  },
   "sindrets/diffview.nvim",
   {
     "j-hui/fidget.nvim",
@@ -94,14 +102,6 @@ return {
       -- Adds a number of user-friendly snippets
       "rafamadriz/friendly-snippets",
     },
-  },
-
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("kanagawa")
-    end,
   },
 
   {
