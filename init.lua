@@ -25,6 +25,13 @@ vim.api.nvim_create_autocmd("BufRead", {
   end
 })
 
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = {"*.mdx"},
+  callback = function ()
+    vim.cmd.set("filetype=markdown")
+  end
+})
+
 require("lazy").setup("plugins")
 
 -- [[ Highlight on yank ]]
