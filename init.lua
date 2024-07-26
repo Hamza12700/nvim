@@ -18,17 +18,17 @@ vim.filetype.add({
   extension = { templ = "templ" }
 })
 
-vim.api.nvim_create_autocmd("BufRead", {
-  pattern = { "*.blade.php" },
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.mdx" },
   callback = function()
-    vim.bo.filetype = "blade"
+    vim.cmd.set("filetype=markdown")
   end
 })
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = {"*.mdx"},
-  callback = function ()
-    vim.cmd.set("filetype=markdown")
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.zig" },
+  callback = function()
+    vim.api.nvim_set_hl(0, '@lsp.type.string.zig', {})
   end
 })
 
@@ -93,9 +93,6 @@ local servers = {
   },
   phpactor = {
     filetypes = { "php", "blade" }
-  },
-  emmet_language_server = {
-    filetypes = { "css", "html", "javascriptreact", "pug", "sass", "scss", "typescriptreact", "templ", "blade" }
   },
   html = {
     filetypes = {
