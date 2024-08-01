@@ -1,6 +1,11 @@
 return {
   "tpope/vim-sleuth",
   {
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    opts = {}
+  },
+  {
     'stevearc/oil.nvim',
     opts = {},
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
