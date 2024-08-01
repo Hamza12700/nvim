@@ -1,12 +1,22 @@
 return {
   "tpope/vim-sleuth",
   {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  },
+  {
     "HoNamDuong/hybrid.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("hybrid")
     end
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true
   },
   "sindrets/diffview.nvim",
   {

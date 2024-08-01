@@ -15,7 +15,7 @@ vim.g.maplocalleader = " "
 
 keymap({ "n", "v" }, "gl", "$")
 keymap({ "n", "v" }, "gh", "_")
-keymap('n', '<leader>e', vim.cmd.Ex)
+keymap('n', '<leader>e', "<cmd>Oil<cr>")
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 keymap({ "i", "v" }, "<c-c>", "<ESC>")
