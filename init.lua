@@ -22,8 +22,17 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.mdx" },
   callback = function()
     vim.cmd.set("filetype=markdown")
+    vim.opt.spell = true
   end
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.md" },
+  callback = function()
+    vim.opt.spell = true
+  end
+})
+
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.zig" },
