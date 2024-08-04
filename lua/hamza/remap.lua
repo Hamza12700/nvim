@@ -20,7 +20,7 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 keymap({ "i", "v" }, "<c-c>", "<ESC>")
 keymap("t", "<Esc>", "<c-\\><c-n>")
-keymap("n", "<leader>g", ":Git<CR>")
+keymap("n", "<leader>g", ":Neogit<CR>")
 keymap("n", "<leader>vd", ":DiffviewOpen<cr>")
 keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 
