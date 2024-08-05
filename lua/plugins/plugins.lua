@@ -9,7 +9,11 @@ return {
       "nvim-telescope/telescope.nvim",
       "ibhagwan/fzf-lua",
     },
-    config = true
+    opts = {
+      telescope_sorter = function ()
+        return require("telescope").extensions.fzf.native_fzf_sorter()
+      end
+    }
   },
   {
     "akinsho/git-conflict.nvim",
