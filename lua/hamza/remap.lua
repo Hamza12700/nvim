@@ -24,6 +24,14 @@ keymap("n", "<leader>g", ":Neogit<CR>")
 keymap("n", "<leader>vd", ":DiffviewOpen<cr>")
 keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 
+-- Trouble keybinds
+keymap("n", "<leader>xx", ":Trouble diagnostics toggle focus=true<cr>", { desc = "Diagnostics (Trouble)", })
+keymap("n", "<leader>xb", ":Trouble diagnostics toggle filter.buf=0 focus=true<cr>", { desc = "Buffer Diagnostics (Trouble)", })
+keymap("n", "<leader>cs", ":Trouble symbols toggle focus=true<cr>", { desc = "Symbols (Trouble)", })
+keymap("n", "<leader>cl", ":Trouble lsp toggle focus=true win.position=right<cr>", { desc = "LSP Definitions / references / ... (Trouble)", })
+keymap("n", "<leader>xq", ":Trouble qflist toggle focus=true<cr>", { desc = "LSP Definitions / references / ... (Trouble)", })
+keymap("n", "<leader>xl", ":Trouble loclist toggle focus=true<cr>", { desc = "Location List (Trouble)", })
+
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 

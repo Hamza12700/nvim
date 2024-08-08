@@ -77,9 +77,8 @@ return {
 
   {
     "folke/trouble.nvim",
-    config = function()
-      vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>")
-    end
+    opts = {},
+    cmd = "Trouble"
   },
 
   "hrsh7th/cmp-buffer",
