@@ -84,8 +84,6 @@ return {
   "hrsh7th/cmp-buffer",
   "ThePrimeagen/git-worktree.nvim",
 
-  "tpope/vim-fugitive",
-
   {
     "lewis6991/gitsigns.nvim",
     config = function()
