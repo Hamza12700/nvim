@@ -81,7 +81,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-  nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+  nmap("<c-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
   nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
   nmap("<leader>o", vim.lsp.buf.format, "Format")
@@ -163,12 +163,12 @@ cmp.setup({
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete({}),
     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-    ['<C-l>'] = cmp.mapping(function()
+    ['<C-k>'] = cmp.mapping(function()
       if luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       end
     end, { 'i', 's' }),
-    ['<C-h>'] = cmp.mapping(function()
+    ['<C-j>'] = cmp.mapping(function()
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       end
