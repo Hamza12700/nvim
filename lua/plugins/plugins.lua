@@ -27,10 +27,14 @@ return {
   },
   {
     "HoNamDuong/hybrid.nvim",
+    lazy = true,
+  },
+  {
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("hybrid")
+    config = function ()
+      vim.cmd.colorscheme("kanagawa-dragon")
     end
   },
   {
