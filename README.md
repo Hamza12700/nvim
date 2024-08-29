@@ -32,3 +32,10 @@ Clone the repository and open `nvim`:
 ```bash
 git clone https://github.com/Hamza12700/Neovim.git ~/.config/nvim/ && nvim
 ```
+
+## Preview
+
+![home](.github/assets/home.png)
+![screenshot](.github/assets/screenshot.png)
+![telescope](.github/assets/telescope.png)
+![git](.github/assets/git.png)
