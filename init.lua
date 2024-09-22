@@ -33,6 +33,12 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { ".env.local" },
+  callback = function()
+    vim.cmd.set("filetype=sh")
+  end
+})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.zig" },
