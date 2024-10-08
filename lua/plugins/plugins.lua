@@ -7,13 +7,15 @@ return {
       "sindrets/diffview.nvim",
 
       "nvim-telescope/telescope.nvim",
-      "ibhagwan/fzf-lua",
     },
-    opts = {
-      telescope_sorter = function ()
-        return require("telescope").extensions.fzf.native_fzf_sorter()
-      end
-    }
+    config = function ()
+      require("neogit").setup({
+        integrations = {
+          telescope = true,
+          diffview = true
+        }
+      })
+    end
   },
   {
     "akinsho/git-conflict.nvim",
