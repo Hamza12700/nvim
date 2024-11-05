@@ -106,9 +106,6 @@ local servers = {
       }
     }
   },
-  phpactor = {
-    filetypes = { "php", "blade" }
-  },
   html = {
     filetypes = {
       "html", "templ", "blade", "php"
