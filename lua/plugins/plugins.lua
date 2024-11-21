@@ -1,5 +1,6 @@
 return {
   "tpope/vim-sleuth",
+  "nvim-treesitter/nvim-treesitter-context",
   {
     "NeogitOrg/neogit",
     dependencies = {
