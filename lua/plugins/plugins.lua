@@ -1,4 +1,38 @@
 return {
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  { "Bilal2453/luvit-meta", lazy = true },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      table.insert(opts.sources, {
+        name = "lazydev",
+        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+      })
+    end,
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      "saadparwaiz1/cmp_luasnip",
+
+      -- Adds LSP completion capabilities
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+
+      -- Adds a number of user-friendly snippets
+      "rafamadriz/friendly-snippets",
+    }
+  },
+
   "tpope/vim-sleuth",
   "nvim-treesitter/nvim-treesitter-context",
   {
@@ -9,7 +43,7 @@ return {
 
       "nvim-telescope/telescope.nvim",
     },
-    config = function ()
+    config = function()
       require("neogit").setup({
         integrations = {
           telescope = true,
@@ -36,7 +70,7 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    config = function ()
+    config = function()
       vim.cmd.colorscheme("kanagawa-dragon")
     end
   },
@@ -112,7 +146,6 @@ return {
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       "j-hui/fidget.nvim",
-      "folke/neodev.nvim",
     },
   },
 
@@ -120,22 +153,6 @@ return {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
     build = "make install_jsregexp"
-  },
-
-  {
-    -- Autocompletion
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      "saadparwaiz1/cmp_luasnip",
-
-      -- Adds LSP completion capabilities
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-
-      -- Adds a number of user-friendly snippets
-      "rafamadriz/friendly-snippets",
-    },
   },
 
   {
