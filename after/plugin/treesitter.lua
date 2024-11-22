@@ -50,6 +50,7 @@ vim.defer_fn(function()
 					["if"] = "@function.inner",
 					["a="] = "@assignment.inner",
 					["as"] = "@assignment.lhs",
+					["ar"] = "@assignment.rhs",
 				},
 			},
 			move = {
