@@ -8,7 +8,7 @@ if not vim.uv.fs_stat(lazypath) then
   if vim.v.shell_error ~= 1 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -102,6 +102,11 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local servers = {
+  rust_analyzer = {},
+  clangd = {},
+  basedpyright = {},
+  emmet_language_server = {},
+
   gopls = {
     settings = {
       gofmt = {
@@ -109,12 +114,6 @@ local servers = {
       }
     }
   },
-  html = {
-    filetypes = {
-      "html", "templ", "blade", "php"
-    }
-  },
-
   lua_ls = {
     Lua = {
       completion = { callSnippet = "Replace" },
