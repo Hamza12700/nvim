@@ -19,11 +19,19 @@ local function keyset(key, func)
 	vim.keymap.set("n", key, func)
 end
 
+
+keyset('<leader>s/', function()
+	builtin.live_grep {
+		grep_open_files = true,
+		prompt_title = 'Live Grep in Open Files',
+	}
+end)
+
 keyset("<leader>sf", builtin.find_files)
-keyset("<leader>?", builtin.oldfiles)
+keyset("<leader>s.", builtin.oldfiles)
 keyset("<leader>b", builtin.buffers)
 keyset("<C-p>", builtin.git_files)
-keyset("<leader>ps", builtin.live_grep)
+keyset("<leader>sg", builtin.live_grep)
 keyset("<leader>sd", builtin.diagnostics)
 
 keyset("<leader>ss", builtin.builtin)
@@ -33,13 +41,6 @@ keyset("<leader>sk", builtin.keymaps)
 keyset("<leader>sr", builtin.resume)
 keyset("<leader>sn", function()
 	builtin.find_files { cwd = vim.fn.stdpath("config") }
-end)
-
-keyset('<leader>/', function()
-	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 14,
-		previewer = false
-	}))
 end)
 
 -- Enable telescope fzf native, if installed
