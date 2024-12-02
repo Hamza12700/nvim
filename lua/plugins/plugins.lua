@@ -27,9 +27,6 @@ return {
       -- Adds LSP completion capabilities
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
-
-      -- Adds a number of user-friendly snippets
-      "rafamadriz/friendly-snippets",
     }
   },
 
@@ -152,7 +149,11 @@ return {
   {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
-    build = "make install_jsregexp"
+    build = "make install_jsregexp",
+    dependencies = {
+      -- Adds a number of user-friendly snippets
+      "rafamadriz/friendly-snippets",
+    }
   },
 
   {
