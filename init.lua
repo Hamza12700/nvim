@@ -1,5 +1,6 @@
 require("hamza.remap")
 require("hamza.options")
+require("hamza.floaterm")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
