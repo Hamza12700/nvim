@@ -81,7 +81,6 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
   nmap("<leader>gs", builtin.git_files, "[G]it files [S]earch")
 
-  nmap("gr", builtin.lsp_references, "[Under Cursor word] [G]oto [R]eferences")
   nmap("<leader>D", builtin.lsp_type_definitions, "Type [D]efinition")
   nmap("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
   nmap("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
