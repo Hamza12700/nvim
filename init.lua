@@ -17,6 +17,7 @@ if not vim.uv.fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("plugins")
 
 vim.filetype.add({
   extension = { templ = "templ" }
@@ -50,8 +51,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.api.nvim_set_hl(0, '@lsp.type.string.zig', {})
   end
 })
-
-require("lazy").setup("plugins")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -147,8 +146,6 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.config.setup({})
-
-require("lspconfig").ocamllsp.setup({})
 
 cmp.setup({
   snippet = {
