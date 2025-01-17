@@ -15,10 +15,16 @@ opt.relativenumber = true
 opt.backup = false
 opt.swapfile = false
 opt.updatetime = 100
-opt.showmode = false
+
 opt.signcolumn = "yes"
 opt.inccommand = "split"
 opt.colorcolumn = "80"
+
+-- Don't use the mode, since it's already in status-line
+opt.showmode = false
+
+-- Enable nerd fonts
+vim.g.have_nerd_font = true
 
 opt.tabstop = 2
 opt.shiftwidth = 2
