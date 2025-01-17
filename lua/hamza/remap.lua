@@ -24,6 +24,12 @@ keymap("n", "<leader>g", ":Neogit<CR>")
 keymap("n", "<leader>vd", ":DiffviewOpen<cr>")
 keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+keymap("n", "<esc>", ":nohlsearch<CR>")
+
+-- Diagnostics Set Location-list
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 local term_id = 0
 keymap("n", "<leader>st", function()
   vim.cmd.vnew()
