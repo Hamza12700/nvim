@@ -4,7 +4,7 @@ opt.scrolloff = 10
 opt.guicursor = ""
 
 -- Set highlight on search
-opt.hlsearch = false
+opt.hlsearch = true
 
 vim.cmd("let g:zig_fmt_autosave = 0")
 opt.iskeyword:append("-")
