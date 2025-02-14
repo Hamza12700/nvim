@@ -55,43 +55,19 @@ return {
     opts = {}
   },
   {
-    'stevearc/oil.nvim',
-    opts = {},
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-  },
-  {
-    "HoNamDuong/hybrid.nvim",
-    lazy = true,
-  },
-  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("kanagawa-dragon")
+      vim.api.nvim_set_hl(0, "Normal", {})
     end
   },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true
-  },
   "sindrets/diffview.nvim",
-  {
-    "j-hui/fidget.nvim",
-    opts = {},
-  },
   {
     "mbbill/undotree",
     config = function()
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-    end
-  },
-  {
-    "numToStr/Comment.nvim",
-    lazy = false,
-    config = function()
-      require("Comment").setup()
     end
   },
   {
@@ -101,22 +77,11 @@ return {
     end
   },
 
-  -- {
-  --   "Exafunction/codeium.vim",
-  --   event = "BufEnter",
-  -- },
-
   {
     "echasnovski/mini.indentscope",
     config = function()
       require("mini.indentscope").setup({})
     end
-  },
-
-  {
-    "folke/trouble.nvim",
-    opts = {},
-    cmd = "Trouble"
   },
 
   "hrsh7th/cmp-buffer",

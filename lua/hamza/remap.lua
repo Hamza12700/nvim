@@ -15,7 +15,6 @@ vim.g.maplocalleader = " "
 
 keymap({ "n", "v" }, "gl", "$")
 keymap({ "n", "v" }, "gh", "_")
-keymap('n', '<leader>e', "<cmd>Oil<cr>")
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 keymap({ "i", "v" }, "<c-c>", "<ESC>")
@@ -29,31 +28,6 @@ keymap("n", "<esc>", ":nohlsearch<CR>")
 
 -- Diagnostics Set Location-list
 keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
-local term_id = 0
-keymap("n", "<leader>st", function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 8)
-
-  term_id = vim.bo.channel
-end)
-
-keymap("n", "<leader>CA", function()
-  local pkg = vim.fn.input("Cargo package: ")
-  vim.fn.chansend(term_id, "cargo add " .. pkg .. "\r\n")
-end, { desc = "Add cargo package" })
-
--- Trouble keybinds
-keymap("n", "<leader>xx", ":Trouble diagnostics toggle focus=true<cr>", { desc = "Diagnostics (Trouble)", })
-keymap("n", "<leader>xb", ":Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
-  { desc = "Buffer Diagnostics (Trouble)", })
-keymap("n", "<leader>cs", ":Trouble symbols toggle focus=true<cr>", { desc = "Symbols (Trouble)", })
-keymap("n", "<leader>cl", ":Trouble lsp toggle focus=true win.position=right<cr>",
-  { desc = "LSP Definitions / references / ... (Trouble)", })
-keymap("n", "<leader>xq", ":Trouble qflist toggle focus=true<cr>", { desc = "Quickfix List (Trouble)", })
-keymap("n", "<leader>xl", ":Trouble loclist toggle focus=true<cr>", { desc = "Location List (Trouble)", })
 
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
