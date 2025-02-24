@@ -1,5 +1,4 @@
 return {
-  "hrsh7th/cmp-nvim-lsp-signature-help",
   {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
