@@ -85,7 +85,6 @@ return {
   },
 
   "hrsh7th/cmp-buffer",
-  "ThePrimeagen/git-worktree.nvim",
 
   {
     "lewis6991/gitsigns.nvim",
@@ -107,7 +106,6 @@ return {
       -- Automatically install LSPs to stdpath for neovim
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
-      "j-hui/fidget.nvim",
     },
   },
 
