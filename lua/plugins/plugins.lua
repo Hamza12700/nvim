@@ -10,7 +10,9 @@ return {
       },
     },
   },
+
   { "Bilal2453/luvit-meta", lazy = true },
+
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
@@ -21,12 +23,8 @@ return {
       })
     end,
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      "saadparwaiz1/cmp_luasnip",
-
       -- Adds LSP completion capabilities
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
     }
   },
 
@@ -84,8 +82,6 @@ return {
     end
   },
 
-  "hrsh7th/cmp-buffer",
-
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -107,16 +103,6 @@ return {
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
     },
-  },
-
-  {
-    "L3MON4D3/LuaSnip",
-    version = "v2.*",
-    build = "make install_jsregexp",
-    dependencies = {
-      -- Adds a number of user-friendly snippets
-      "rafamadriz/friendly-snippets",
-    }
   },
 
   {
