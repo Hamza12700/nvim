@@ -24,31 +24,9 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.mdx" },
-  callback = function()
-    vim.cmd.set("filetype=markdown")
-    vim.opt.spell = true
-  end
-})
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { "*.md" },
+  pattern = { "*.md", "*.txt", "*" },
   callback = function()
     vim.opt.spell = true
-  end
-})
-
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = { ".env.local" },
-  callback = function()
-    vim.cmd.set("filetype=sh")
-  end
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.zig" },
-  callback = function()
-    vim.api.nvim_set_hl(0, '@lsp.type.string.zig', {})
   end
 })
 
@@ -101,9 +79,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local servers = {
-  rust_analyzer = {},
   clangd = {},
-  basedpyright = {},
   emmet_language_server = {},
 
   gopls = {
