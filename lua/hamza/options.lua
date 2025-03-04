@@ -18,7 +18,7 @@ opt.updatetime = 100
 
 opt.signcolumn = "yes"
 opt.inccommand = "split"
-opt.colorcolumn = "80"
+opt.colorcolumn = "90"
 
 -- Don't use the mode, since it's already in status-line
 opt.showmode = false
