@@ -3,11 +3,11 @@
 ---@param rhs string | function
 ---@param opts table | nil
 local function keymap(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
+   local options = { noremap = true, silent = true }
+   if opts then
+      options = vim.tbl_extend("force", options, opts)
+   end
+   vim.keymap.set(mode, lhs, rhs, options)
 end
 
 vim.g.mapleader = " "
@@ -28,8 +28,8 @@ keymap("n", "<esc>", ":nohlsearch<CR>")
 
 -- Hide inline LSP diagnostics
 keymap("n", "<leader>ll", function()
-  local config = not vim.diagnostic.config()
-  vim.diagnostic.config({ virtual_text = config })
+   local config = not vim.diagnostic.config()
+   vim.diagnostic.config({ virtual_text = config })
 end, { desc = "Hide/Show inline LSP Diagnostics" })
 
 -- Diagnostics Set Location-list
