@@ -26,6 +26,12 @@ keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap("n", "<esc>", ":nohlsearch<CR>")
 
+-- Hide inline LSP diagnostics
+keymap("n", "<leader>ll", function()
+  local config = not vim.diagnostic.config()
+  vim.diagnostic.config({ virtual_text = config })
+end, { desc = "Hide/Show inline LSP Diagnostics" })
+
 -- Diagnostics Set Location-list
 keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 

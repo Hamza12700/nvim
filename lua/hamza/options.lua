@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+opt.nu = false
+opt.rnu = false
+
 opt.scrolloff = 10
 opt.guicursor = ""
 
@@ -8,17 +11,15 @@ opt.hlsearch = true
 
 vim.cmd("let g:zig_fmt_autosave = 0")
 opt.iskeyword:append("-")
+vim.diagnostic.config({ virtual_text = false })
 
 -- Make line numbers default
-vim.wo.number = true
-opt.relativenumber = true
 opt.backup = false
 opt.swapfile = false
 opt.updatetime = 100
 
-opt.signcolumn = "yes"
+opt.signcolumn = "no"
 opt.inccommand = "split"
-opt.colorcolumn = "90"
 
 -- Don't use the mode, since it's already in status-line
 opt.showmode = false
@@ -26,11 +27,9 @@ opt.showmode = false
 -- Enable nerd fonts
 vim.g.have_nerd_font = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 3
+opt.shiftwidth = 3
 opt.expandtab = true
-opt.softtabstop = 2
-opt.smartindent = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- Enable break indent
@@ -43,16 +42,10 @@ opt.undofile = true
 opt.ignorecase = true
 opt.smartcase = true
 
--- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
-
 -- Decrease update time
 opt.updatetime = 250
 opt.timeoutlen = 300
 
--- Set completeopt to have a better completion experience
-opt.completeopt = "menuone,noselect"
-
--- NOTE: You should make sure your terminal supports this
 opt.termguicolors = true
 opt.softtabstop = 2
+
