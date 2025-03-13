@@ -2,6 +2,7 @@ local opt = vim.opt
 
 opt.nu = false
 opt.rnu = false
+opt.smartindent = true
 
 opt.scrolloff = 10
 opt.guicursor = ""
@@ -29,6 +30,7 @@ vim.g.have_nerd_font = true
 
 opt.tabstop = 3
 opt.shiftwidth = 3
+opt.softtabstop = 3
 opt.expandtab = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
