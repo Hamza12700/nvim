@@ -1,4 +1,6 @@
 return {
+   "nvim-treesitter/nvim-treesitter-context",
+
    {
       "folke/lazydev.nvim",
       ft = "lua", -- only load on lua files
@@ -28,7 +30,6 @@ return {
       }
    },
 
-   "nvim-treesitter/nvim-treesitter-context",
    {
       "NeogitOrg/neogit",
       dependencies = {
@@ -46,11 +47,13 @@ return {
          })
       end
    },
+
    {
       "akinsho/git-conflict.nvim",
       version = "*",
       opts = {}
    },
+
    {
       "rebelot/kanagawa.nvim",
       lazy = false,
