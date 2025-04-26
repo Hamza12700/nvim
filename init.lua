@@ -26,7 +26,9 @@ vim.filetype.add({
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
    pattern = { "*.md", "*.txt", "*" },
    callback = function()
-      vim.opt.spell = true
+      if vim.fn.expand("%:e") == "" then
+         vim.opt.spell = true
+      end
    end
 })
 
@@ -78,24 +80,6 @@ end
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local servers = {
-   clangd = {},
-   emmet_language_server = {},
-
-   gopls = {
-      settings = {
-         gofmt = {
-            tabwidth = 2
-         }
-      }
-   },
-   lua_ls = {
-      Lua = {
-         completion = { callSnippet = "Replace" },
-      },
-   },
-}
-
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -103,17 +87,12 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
 
-mason_lspconfig.setup({
-   ensure_installed = vim.tbl_keys(servers),
-})
-
+mason_lspconfig.setup()
 mason_lspconfig.setup_handlers({
    function(server_name)
       require("lspconfig")[server_name].setup({
          capabilities = capabilities,
          on_attach = on_attach,
-         settings = servers[server_name],
-         filetypes = (servers[server_name] or {}).filetypes,
       })
    end,
 })
