@@ -53,27 +53,23 @@ vim.defer_fn(function()
 					["ar"] = "@assignment.rhs",
 				},
 			},
+
 			move = {
 				enable = true,
 				set_jumps = true, -- whether to set jumps in the jumplist
+
 				goto_next_start = {
-					["]f"] = "@function.outer",
 					["]i"] = "@conditional.outer",
+					["[f"] = "@function.outer",
 					["]l"] = "@loop.outer",
 				},
+
 				goto_next_end = {
-					["[f"] = "@function.outer",
+					["]f"] = "@function.outer",
 					["[i"] = "@conditional.outer"
 				},
-				goto_previous_start = {
-					["]F"] = "@function.outer",
-					["]I"] = "@conditional.outer",
-				},
-				goto_previous_end = {
-					["[F"] = "@function.outer",
-					["[I"] = "@conditional.outer",
-				},
 			},
+
 			lsp_interop = {
 				enable = true,
 				border = 'none',
