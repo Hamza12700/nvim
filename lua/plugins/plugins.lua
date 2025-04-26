@@ -78,13 +78,6 @@ return {
    },
 
    {
-      "echasnovski/mini.indentscope",
-      config = function()
-         require("mini.indentscope").setup({})
-      end
-   },
-
-   {
       "ThePrimeagen/harpoon",
       dependencies = { "nvim-lua/plenary.nvim" }
    },

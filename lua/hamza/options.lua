@@ -18,7 +18,6 @@ opt.guicursor = ""
 opt.hlsearch = true
 
 vim.cmd("let g:zig_fmt_autosave = 0")
-opt.iskeyword:append("-")
 vim.diagnostic.config({ virtual_text = false })
 
 -- Make line numbers default
