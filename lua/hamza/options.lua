@@ -38,7 +38,6 @@ opt.tabstop = 3
 opt.shiftwidth = 3
 opt.softtabstop = 3
 opt.expandtab = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- Enable break indent
 opt.breakindent = true

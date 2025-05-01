@@ -63,13 +63,9 @@ return {
          vim.api.nvim_set_hl(0, "Normal", {})
       end
    },
+
    "sindrets/diffview.nvim",
-   {
-      "mbbill/undotree",
-      config = function()
-         vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-      end
-   },
+
    {
       "ggandor/leap.nvim",
       config = function()
