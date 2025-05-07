@@ -19,10 +19,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
-vim.filetype.add({
-   extension = { templ = "templ" }
-})
-
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
    pattern = { "*.md", "*.txt", "*" },
    callback = function()
