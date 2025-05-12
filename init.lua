@@ -71,19 +71,23 @@ local on_attach = function(_, bufnr)
    nmap("<leader>o", vim.lsp.buf.format, "Format")
 end
 
--- mason-lspconfig requires that these setup functions are called in this order
--- before setting up the servers.
-require("mason").setup()
-require("mason-lspconfig").setup()
-
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
--- Ensure the servers above are installed
-local mason_lspconfig = require("mason-lspconfig")
-
-mason_lspconfig.setup()
+require("mason").setup()
+require("mason-lspconfig").setup {
+   automatic_enable = true,
+   ensure_installed = {},
+   handlers = {
+      function(server_name)
+         require("lspconfig")[server_name].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+         })
+      end,
+   }
+}
 
 local cmp = require("cmp")
 cmp.setup({
