@@ -23,6 +23,17 @@ keymap("n", "<leader>g", ":Neogit<CR>")
 keymap("n", "<leader>vd", ":DiffviewOpen<cr>")
 keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 
+local nmap = function(keys, func, desc)
+   vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+end
+
+nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+nmap("<c-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap("n", "<esc>", ":nohlsearch<CR>")
 
