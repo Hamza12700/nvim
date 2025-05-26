@@ -1,5 +1,19 @@
 local opt = vim.opt
 
+opt.tabstop = 3
+opt.shiftwidth = 3
+opt.softtabstop = 3
+opt.expandtab = true
+
+vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "*",
+   callback = function()
+      vim.opt_local.shiftwidth = 3
+      vim.opt_local.softtabstop = 3
+      vim.opt_local.tabstop = 3
+   end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
    pattern = "*",
    callback = function()
@@ -34,10 +48,6 @@ opt.showmode = false
 -- Enable nerd fonts
 vim.g.have_nerd_font = true
 
-opt.tabstop = 3
-opt.shiftwidth = 3
-opt.softtabstop = 3
-opt.expandtab = true
 
 -- Enable break indent
 opt.breakindent = true
