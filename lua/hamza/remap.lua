@@ -27,6 +27,8 @@ local nmap = function(keys, func, desc)
    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 end
 
+nmap("mm", "%") -- Very useful keybind that I discovered when using helix
+
 nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")

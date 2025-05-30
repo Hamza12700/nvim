@@ -30,30 +30,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
    pattern = "*",
 })
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-require("mason").setup()
-require("mason-lspconfig").setup {
-   automatic_enable = true,
-   ensure_installed = {},
-   handlers = {
-      function(server_name)
-         require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-         })
-      end,
-   }
-}
-
-local cmp = require("cmp")
-cmp.setup({
-   mapping = cmp.mapping.preset.insert({
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
-   }),
-})
-
 local nmap = function(keys, func, desc)
    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 end
@@ -67,3 +43,7 @@ nmap("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
 nmap("<leader>gr", builtin.lsp_references, "[G]oto [R]eferences")
 nmap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
 nmap("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+nmap("<leader>s", builtin.oldfiles, "[W]orkspace [S]ymbols")
+
+vim.lsp.enable("clangd")
+vim.lsp.enable("zls")
