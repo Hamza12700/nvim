@@ -27,7 +27,7 @@ keyset('<leader>s/', function()
 	}
 end)
 
-keyset("<leader>sf", builtin.find_files)
+keyset("<leader>f", builtin.find_files)
 keyset("<leader>s.", builtin.oldfiles)
 keyset("<leader>b", builtin.buffers)
 keyset("<C-p>", builtin.git_files)
