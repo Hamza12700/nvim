@@ -45,5 +45,4 @@ nmap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
 nmap("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 nmap("<leader>s", builtin.oldfiles, "[W]orkspace [S]ymbols")
 
-vim.lsp.enable("clangd")
-vim.lsp.enable("zls")
+vim.lsp.enable({"clangd", "zls"})
