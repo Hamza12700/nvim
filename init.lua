@@ -51,6 +51,6 @@ vim.api.nvim_set_hl(0, "NOTE", { fg = "#b8b8b8", bold = true })
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
    pattern = "*",
    callback = function()
-      vim.fn.matchadd("NOTE", "@[A-z]\\w*")
+      vim.fn.matchadd("NOTE", "@[A-Z]\\w*")
    end
 })
