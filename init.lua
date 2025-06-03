@@ -48,9 +48,10 @@ nmap("<leader>s", builtin.oldfiles, "[W]orkspace [S]ymbols")
 vim.lsp.enable({"clangd", "zls"})
 
 vim.api.nvim_set_hl(0, "NOTE", { fg = "#b8b8b8", bold = true })
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "WinNew"}, {
    pattern = "*",
    callback = function()
       vim.fn.matchadd("NOTE", "@[A-Z]\\w*")
+      vim.fn.matchadd("NOTE", " :[A-Z]\\w*")
    end
 })
