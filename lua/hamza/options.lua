@@ -1,17 +1,17 @@
 local opt = vim.opt
 
-opt.tabstop = 3
-opt.shiftwidth = 3
-opt.softtabstop = 3
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
 opt.textwidth = 90
 
 vim.api.nvim_create_autocmd("BufEnter", {
    pattern = "*",
    callback = function()
-      vim.opt_local.shiftwidth = 3
-      vim.opt_local.softtabstop = 3
-      vim.opt_local.tabstop = 3
+      vim.opt_local.shiftwidth = 2
+      vim.opt_local.softtabstop = 2
+      vim.opt_local.tabstop = 2
    end,
 })
 

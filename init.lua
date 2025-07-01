@@ -45,8 +45,6 @@ nmap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
 nmap("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 nmap("<leader>s", builtin.oldfiles, "[W]orkspace [S]ymbols")
 
-vim.lsp.enable({"clangd", "zls"})
-
 vim.api.nvim_set_hl(0, "NOTE", { fg = "#b8b8b8", bold = true })
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "WinNew"}, {
    pattern = "*",
