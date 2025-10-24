@@ -53,3 +53,5 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "WinNew"}, {
       vim.fn.matchadd("NOTE", " :[A-Z]\\w*")
    end
 })
+
+vim.lsp.enable("clangd")
