@@ -124,4 +124,6 @@ return {
     },
     opts_extend = { "sources.default" }
   },
+
+  {"windwp/nvim-ts-autotag", opts = {}},
 }
