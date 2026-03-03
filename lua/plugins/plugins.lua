@@ -1,12 +1,24 @@
 return {
   {
-    "mason-org/mason-lspconfig.nvim",
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
     opts = {},
-    dependencies = {
-      { "mason-org/mason.nvim", opts = {} },
-      "neovim/nvim-lspconfig"
-    },
+    -- Optional dependencies
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
   },
+  { 'nvim-mini/mini.indentscope', version = '*', opts = {} },
+  -- {
+  --   "mason-org/mason-lspconfig.nvim",
+  --   opts = {},
+  --   dependencies = {
+  --     { "mason-org/mason.nvim", opts = {} },
+  --     "neovim/nvim-lspconfig"
+  --   },
+  -- },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -16,21 +28,33 @@ return {
   },
 
   {
-    "rebelot/kanagawa.nvim",
+    "zenbones-theme/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("kanagawa-dragon")
+        vim.g.zenbones_darken_comments = 45
+        vim.cmd.colorscheme('zenwritten')
     end
   },
+
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("kanagawa-dragon")
+  --   end
+  -- },
 
   "sindrets/diffview.nvim",
 
   {
-    "ggandor/leap.nvim",
-    config = function()
-      require("leap").create_default_mappings()
-    end
+    url = "https://codeberg.org/andyg/leap.nvim",
+    opts = {}
   },
 
   {

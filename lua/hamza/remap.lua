@@ -13,6 +13,10 @@ end
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- :leap
+vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
+
 keymap({ "n", "v" }, "gl", "$")
 keymap({ "n", "v" }, "gh", "_")
 keymap("v", "J", ":m '>+1<CR>gv=gv")
@@ -24,6 +28,7 @@ keymap("n", "<leader>cd", ":DiffviewClose<cr>")
 keymap({"n", "v"}, "mm", "%") -- Very useful keybind that I discovered when using helix
 keymap("n", "U", "<C-R>")
 keymap("n", "cw", "caw")
+keymap("n", "<leader>o", ":Oil<cr>")
 
 local nmap = function(keys, func, desc)
    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
