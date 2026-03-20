@@ -35,20 +35,20 @@ return {
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-        vim.g.zenbones_darken_comments = 45
-        vim.cmd.colorscheme('zenwritten')
-    end
+    -- config = function()
+    --     vim.g.zenbones_darken_comments = 45
+    --     vim.cmd.colorscheme('zenbones')
+    -- end
   },
 
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme("kanagawa-dragon")
-  --   end
-  -- },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("kanagawa-dragon")
+    end
+  },
 
   "sindrets/diffview.nvim",
 
