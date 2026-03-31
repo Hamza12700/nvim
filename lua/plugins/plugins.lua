@@ -11,34 +11,20 @@ return {
     lazy = false,
   },
   { 'nvim-mini/mini.indentscope', version = '*', opts = {} },
-  -- {
-  --   "mason-org/mason-lspconfig.nvim",
-  --   opts = {},
-  --   dependencies = {
-  --     { "mason-org/mason.nvim", opts = {} },
-  --     "neovim/nvim-lspconfig"
-  --   },
-  -- },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig"
+    },
+  },
 
   {
     "nvim-treesitter/nvim-treesitter",
     branch = 'master',
     lazy = false,
     build = ":TSUpdate"
-  },
-
-  {
-    "zenbones-theme/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
-    priority = 1000,
-    -- config = function()
-    --     vim.g.zenbones_darken_comments = 45
-    --     vim.cmd.colorscheme('zenbones')
-    -- end
   },
 
   {
@@ -106,6 +92,8 @@ return {
 
     -- use a release tag to download pre-built binaries
     version = '1.*',
+    -- Disable cmdline
+    cmdline = { enabled = false },
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -130,8 +118,11 @@ return {
         nerd_font_variant = 'mono'
       },
 
-      -- (Default) Only show the documentation popup when manually triggered
-      completion = { documentation = { auto_show = false } },
+      completion = {
+        documentation = { auto_show = false } ,
+        list = { selection = { auto_insert = false } },
+        menu = { auto_show = false },
+      },
 
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -144,9 +135,11 @@ return {
       -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
       --
       -- See the fuzzy documentation for more information
-      fuzzy = { implementation = "prefer_rust_with_warning" }
+      fuzzy = { implementation = "prefer_rust_with_warning" },
+      signature = { enabled = true }
     },
-    opts_extend = { "sources.default" }
+
+    opts_extend = { "sources.default" },
   },
 
   {"windwp/nvim-ts-autotag", opts = {}},
